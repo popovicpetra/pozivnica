@@ -1,0 +1,80 @@
+.mesecevslika{
+    width: 100%;
+}
+
+.lokacija{
+   max-width: 60px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.restoran{
+    font-family: 'Manrope';
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.mesecev{
+     font-family: 'Allura', cursive;
+     font-size: 2.7rem;
+     margin: 0;
+     font-weight: 500;
+}
+
+.mapa{
+    font-family: 'Manrope';
+    font-size: 0.9rem;
+    border-radius: 12px;
+    padding: 0.7rem 1rem;
+    background-color: rgba(121,0,0,1);
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+@media (min-width: 420px){
+    .lokacija{
+    max-width: 70px;
+    }
+    .restoran{
+    margin: 0;
+    font-size: 1.6rem;
+    }
+
+    .mesecev{
+     font-size: 3.1rem;
+    }
+
+    .mapa{
+    font-size: 1rem;
+    }
+}
+
+@media(min-width: 500px){
+    .mesecev{
+     font-size: 3.5rem;
+    }
+}
+
+@media(min-width: 700px){
+     .lokacija{
+    max-width: 90px;
+    }
+    .restoran{
+    margin: 0;
+    font-size: 1.9rem;
+    }
+
+    .mesecev{
+     font-size: 3.8rem;
+    }
+     .mapa{
+    font-size: 1.2rem;
+    }
+}

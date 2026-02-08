@@ -1,0 +1,91 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    gap: 1.7rem;
+    padding-left: 3rem;
+}
+
+.slika{
+    max-width: 40px;
+}
+
+/* .info{
+   display:flex;
+   flex-direction: column;
+} */
+
+.divider{
+    border: none;
+  height: 1px;
+  background-color: black;
+    width: 82%;
+  
+}
+
+.sati{
+    margin: 0;
+    font-size: 2.7rem;
+    font-family: 'Manrope';
+    font-weight: 300;
+}
+
+.text{
+    margin: 0;
+    font-family: 'Allura', cursive;
+     font-size: 1.7rem;
+
+}
+
+@media(min-width: 320px){
+  .slika{
+    max-width: 25px;
+    }
+    .sati{
+    font-size: 1.9rem;
+    }
+    .text{
+     font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 340px){
+  .slika{
+    max-width: 30px;
+    }
+    .sati{
+    font-size: 2rem;
+    }
+    .text{
+     font-size: 1.6rem;
+    }
+}
+
+@media(min-width: 410px){
+  .slika{
+    max-width: 40px;
+    }
+
+}
+
+@media(min-width: 490px){
+    .sati{
+    font-size: 2.3rem;
+    }
+    .text{
+     font-size: 1.9rem;
+    }
+}
+
+@media(min-width: 600px){
+    .sati{
+    font-size: 2.5rem;
+    }
+    .text{
+     font-size: 2.1rem;
+    }
+}
+
+
+
+

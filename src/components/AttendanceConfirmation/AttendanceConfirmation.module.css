@@ -1,0 +1,66 @@
+.potvrda{
+
+    font-family: 'Whispering Signature-Personal use', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.rok{
+    font-family: 'Manrope';
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+.kraj{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 90%;
+}
+
+.text{
+     font-family: 'Manrope';
+     font-size: 1.4rem;
+}
+
+.at{
+    font-family: 'Whispering Signature-Personal use', sans-serif;
+   font-size: 4.2rem;
+   text-align: center;
+   transform: rotate(-10deg);
+   line-height: 1.2;
+   margin: 0;
+}
+
+@media(max-width: 410px){
+    .potvrda{
+            font-size: 2.3rem;
+    }
+
+    .rok{
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .text{
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .at{
+        font-size: 3.3rem;
+    }
+
+}

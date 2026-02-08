@@ -1,0 +1,163 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Manrope';
+    font-size: 1.3rem;
+    gap: 1.5rem;
+}
+.potvrda{
+    font-family: 'Manrope';
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.potvrdj{
+    margin: 0;
+}
+.labelad{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+
+.labelal{
+    display: flex;
+    align-items: center;
+        margin-top: 0;
+
+}
+.ratio{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+.labelal input[type="radio"] {
+  transform: scale(1.5); /* povećava krug */
+}
+.labelad input[type="radio"] {
+  transform: scale(1.5); /* povećava krug */
+}
+input[type="radio"]:checked {
+    accent-color: rgba(121,0,0,1);
+}
+
+.inputl{
+    margin: 7px;
+}
+
+.inputd{
+    margin: 7px;
+}
+
+.textInput{
+    height: 2rem;
+    border-radius: 10px;
+    font-family: 'Manrope';
+    font-size: 1rem;
+}
+
+
+.ime{
+    width: 100%;
+}
+
+.imeP{
+    margin: 0;
+}
+
+/* p{
+    margin: 0;
+} */
+
+.dugmici{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.plus{
+     display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.dugme{
+    height: 2.9rem;
+    width: 7rem;
+    border-radius: 10px;
+    background-color: white;
+    border-color: rgba(121,0,0,1);
+    color: rgba(121,0,0,1);;
+    font-size: 1rem;
+}
+
+.dugmeSelektovano {
+  background-color: rgba(121,0,0,1);
+  color: white;
+}
+
+.napomenaInput{
+    height: 7rem;
+    font-family: 'Manrope';
+    font-size: 1rem;
+     border-radius: 10px;
+}
+
+.centriraj{
+    display: flex;
+    justify-content: center;
+}
+
+.dugmePotvrdi{
+    height: 2.9rem;
+    width: 7.5rem;
+    border-radius: 10px;
+    background-color:  rgba(121,0,0,1);
+    border-color: rgba(121,0,0,1);
+    color: white;
+    font-size: 1.2rem;
+}
+
+.textInput:focus,
+.napomenaInput:focus {
+    border: 2px solid rgba(121,0,0,1);
+    outline: none;
+    caret-color: black;
+}
+
+@media(max-width: 360px){
+    .dugme{
+    height: 2.2rem;
+    width: 5rem;
+    font-size: 1rem;
+    }
+
+}
+
+@media(max-width: 410px){
+    .dugme{
+    height: 2.5rem;
+    width: 5.4rem;
+    font-size: 1rem;
+    }
+
+    .potvrda{
+        font-size: 1rem;
+    }
+
+    .imeP{
+        font-size: 1rem;
+    }
+    .dugmePotvrdi{
+        font-size: 1rem;
+    }
+
+}

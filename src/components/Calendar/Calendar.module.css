@@ -1,0 +1,32 @@
+.slika{
+    width: 100%;
+    /* margin-top: -3.7rem;  */
+    padding: 0;
+}
+
+.text{
+    font-family: 'Whispering Signature-Personal use', sans-serif;
+    font-size: 3.3rem;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: -3rem; */
+}
+
+@media (min-width: 500px){
+  .text{
+    font-size: 4rem;
+  }
+}
+
+
+@media (min-width: 690px){
+  .text{
+    font-size: 4.5rem;
+  }
+}
