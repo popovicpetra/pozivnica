@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from '../Form/Form.module.css'
 import Swal from "sweetalert2";
 function Form({maxGuests}){
+  console.log(import.meta.env.VITE_API_URL);
   const [dolazi, setDolazi] = useState('');
   const [ime, setIme] = useState('');
   const [dodatniGosti, setDodatniGosti] = useState([]);
@@ -65,9 +66,8 @@ function Form({maxGuests}){
     return;
   }
 
-
     try{
-      const response = await fetch('http://192.168.56.1:3000/gosti', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/gosti`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -98,6 +98,8 @@ function Form({maxGuests}){
 });
   }
   };
+
+
     return (
         <form className={styles.container} onSubmit={handleSubmit}>
             <div className={styles.potvrda}>
