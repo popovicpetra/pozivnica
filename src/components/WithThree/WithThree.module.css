@@ -1,0 +1,9 @@
+@media (min-width: 600px) {
+  .mobile { display: none; }
+  .desktopOnly { display: block; }
+}
+
+@media (max-width: 600px) {
+  .mobile { display: block; }
+  .desktopOnly { display: none; }
+}
