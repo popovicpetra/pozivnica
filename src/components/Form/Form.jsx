@@ -8,14 +8,16 @@ function Form({maxGuests}){
   const [dodatniGosti, setDodatniGosti] = useState([]);
   const [napomena, setNapomena] = useState('');
 
+  const [loading, setLoading] = useState(false);
+
   const [dodatnaPolja, setDodatnaPolja] = useState(0); 
   const [selektovanoDugme, setSelektovanoDugme] = useState(null);
 
   const dodajOsobe = (broj) => {
-       if (selektovanoDugme === broj) {
+      if (selektovanoDugme === broj) {
       setDodatnaPolja(0);
       setSelektovanoDugme(null);
-       setDodatniGosti([]);
+      setDodatniGosti([]);
     } else {
       setDodatnaPolja(broj);
       setSelektovanoDugme(broj);
@@ -31,6 +33,9 @@ function Form({maxGuests}){
 
  const handleSubmit = async (e) => {
     e.preventDefault();
+
+     if (loading) return; // spreči double submit
+      setLoading(true);
 
   if (!dolazi) {
     Swal.fire({
@@ -65,6 +70,14 @@ function Form({maxGuests}){
 });
     return;
   }
+   Swal.fire({
+    title: "Slanje odgovora 💌",
+    text: "Molimo sačekajte...",
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  });
 
     try{
       const response = await fetch(`${import.meta.env.VITE_API_URL}/gosti`, {
@@ -90,12 +103,21 @@ function Form({maxGuests}){
 });
   } catch(err){
       Swal.fire({
-  title: "Greška!",
-  text: "Došlo je do greške prilikom slanja odgovora.",
-  icon: "error",
-  confirmButtonColor: "rgba(121,0,0,1)",
-  confirmButtonText: "Pokušaj ponovo",
+        title: "Greška!",
+        text: "Došlo je do greške prilikom slanja odgovora.",
+        icon: "error",
+        confirmButtonColor: "rgba(121,0,0,1)",
+        confirmButtonText: "Pokušaj ponovo",
 });
+  } finally{
+
+    setLoading(false);
+    setDolazi("");
+    setIme("");
+    setDodatniGosti([]);
+    setNapomena("");
+    setDodatnaPolja(0);
+    setSelektovanoDugme(null);
   }
   };
 
@@ -106,19 +128,19 @@ function Form({maxGuests}){
                 <p className={styles.potvrdj}>Potvrđujem dolazak:</p>
                 <div className={styles.ratio}>
                     <label className={styles.labelal}>
-                        <input className={styles.inputl} type="radio" name="prisustvo" value="DA" onChange={e => setDolazi(e.target.value)}/>
+                        <input className={styles.inputl} type="radio" name="prisustvo" value="DA" checked={dolazi === "DA"} onChange={e => setDolazi(e.target.value)}/>
                             DA
                     </label>
 
                     <label className={styles.labelad}>
-                        <input className={styles.inputd} type="radio" name="prisustvo" value="NE" onChange={e => setDolazi(e.target.value)}/>
+                        <input className={styles.inputd} type="radio" name="prisustvo" value="NE" checked={dolazi === "NE"} onChange={e => setDolazi(e.target.value)}/>
                         NE
                     </label>
                 </div>
             </div>
             <div className={styles.potvrda}>
                 <p className={styles.imeP}>Ime i prezime:</p>
-             <input className={styles.textInput}  type="text" onChange={e => setIme(e.target.value)} />
+             <input className={styles.textInput}  type="text" value={ime} onChange={e => setIme(e.target.value)} />
              </div>
 
              {/* <div className={styles.plus}>
@@ -173,16 +195,16 @@ function Form({maxGuests}){
         <div className={styles.plus} key={i}>
           <div className={styles.potvrda}>
             <p className={styles.imeP}>Ime i prezime:</p>
-            <input className={styles.textInput} type="text" onChange={e => handleDodatniGostiChange(i, e.target.value)}/>
+            <input className={styles.textInput} type="text" value={dodatniGosti[i] || ""} onChange={e => handleDodatniGostiChange(i, e.target.value)}/>
           </div>
         </div>
       ))}
              <div className={styles.plus}>
                 <p className={styles.imeP}>Napomena:</p>
-                <textarea className={styles.napomenaInput} onChange={e => setNapomena(e.target.value)}/>
+                <textarea className={styles.napomenaInput} value={napomena} onChange={e => setNapomena(e.target.value)}/>
              </div>
             <div className={styles.centriraj}>
-             <button type = "submit" className={styles.dugmePotvrdi}>Potvrdi</button>
+             <button type = "submit" className={styles.dugmePotvrdi} disabled={loading}>Potvrdi</button>
             </div>
         </form>
     )

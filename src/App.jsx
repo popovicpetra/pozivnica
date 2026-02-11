@@ -18,10 +18,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/cekamo-vas" element={<WithThree maxGuests={0} />} />
-        <Route path="/vidimo-se" element={<WithThree maxGuests={1} />} />
-        <Route path="/vidimo-se-plus2" element={<WithThree maxGuests={2} />} />
-        <Route path="/vidimo-se-plus3" element={<WithThree maxGuests={3} />} />
+        <Route path="/cekamo-te" element={<WithThree maxGuests={0} />} />
+        <Route path="/cekamo-vas" element={<WithThree maxGuests={1} />} />
+        <Route path="/cekamo-vaas" element={<WithThree maxGuests={2} />} />
+        <Route path="/cekamo-vaaas" element={<WithThree maxGuests={3} />} />
       </Routes>
     </BrowserRouter>
   );
