@@ -71,7 +71,7 @@ function Form({maxGuests}){
     return;
   }
    Swal.fire({
-    title: "Slanje odgovora 💌",
+    title: "Slanje odgovora",
     text: "Molimo sačekajte...",
     allowOutsideClick: false,
     didOpen: () => {
