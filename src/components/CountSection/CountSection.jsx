@@ -1,7 +1,7 @@
 import picture from '../../assets/druga4x.png'
 import styles from '../CountSection/CountSection.module.css'
 import Countdown from 'react-countdown';
-
+import {motion} from "framer-motion"
 const renderer =({days, hours, minutes, seconds})=>{
     return(
 
@@ -44,6 +44,12 @@ const targetDate = new Date(2026, 3, 19, targetHour, 0, 0);
 
 function CountSection(){
     return(
+        <motion.section
+      initial={{ opacity: 0,  y: 10, scale: 0.98 }}
+      whileInView={{ opacity: 1,  y: 0, scale: 1  }}
+      transition={{ duration: 1.3, ease: "easeOut"  }}
+      viewport={{ amount: 0.5, once: true }}
+    >
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <img src={picture} className={styles.image}/>
@@ -55,8 +61,8 @@ function CountSection(){
             </div>
        
         </div>
+        </motion.section>
     )
 }
 
 export default CountSection;
-console
