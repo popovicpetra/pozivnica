@@ -1,15 +1,9 @@
 import styles from '../AttendanceConfirmation/AttendanceConfirmation.module.css'
 import Form from '../Form/Form'
-import {motion} from "framer-motion"
 function AttendanceConfirmation({maxGuests}){
 
     return (
-             <motion.section
-      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-      whileInView={{ opacity: 1,  y: 0, scale: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut"  }}
-      viewport={{amount:0.3, once: true }}
-      >
+             
         <div className={styles.container}>
         
             <p className={styles.potvrda}>Potvrda dolaska</p>
@@ -29,7 +23,6 @@ function AttendanceConfirmation({maxGuests}){
                 Andreja</p>
             </div>
         </div>
-      </motion.section>
     )
 }
 

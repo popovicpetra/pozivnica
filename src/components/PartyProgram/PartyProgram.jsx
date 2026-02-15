@@ -5,16 +5,10 @@ import torta from '../../assets/torta3x.png'
 import pozadina from '../../assets/krempozadina3x.png'
 import PartyItem from '../PartyItem/PartyItem'
 import styles from '../PartyProgram/PartyProgram.module.css'
-import {motion} from "framer-motion"
 function PartyProgram(){
 
     return(
-                   <motion.section
-      initial={{ opacity: 0,  y: 10, scale: 0.98 }}
-      whileInView={{ opacity: 1,  y: 0, scale: 1  }}
-      transition={{ duration: 1, ease: "easeOut"  }}
-      viewport={{amount:0.3, once: true }}
-    >
+                   
         <div className={styles.container}>
             <img src={pozadina} className={styles.slika}></img>
      
@@ -35,7 +29,6 @@ function PartyProgram(){
             </div>
 
         </div>
-        </motion.section>
     )
 }
 
