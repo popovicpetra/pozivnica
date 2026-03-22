@@ -23,8 +23,8 @@ function App() {
         <Route path="/cekamo-vas" element={<WithThree maxGuests={1} />} />
         <Route path="/cekamo-vaas" element={<WithThree maxGuests={2} />} />
         <Route path="/cekamo-vaaas" element={<WithThree maxGuests={3} />} />
-        <Route path="/cekamo-te!" element={<NewDate maxGuests={0}/>}/>
-        <Route path="/cekamo-vas!" element={<NewDate maxGuests={1} />} />
+        <Route path="/cekamo_te" element={<NewDate maxGuests={0}/>}/>
+        <Route path="/cekamo_vas" element={<NewDate maxGuests={1} />} />
 
       </Routes>
     </BrowserRouter>
