@@ -13,7 +13,7 @@ function AttendanceConfirmation({maxGuests}){
     
         
         
-            <Form maxGuests = {maxGuests}/>
+            {/* <Form maxGuests = {maxGuests}/> */}
      
             <div className={styles.kraj}>
             
